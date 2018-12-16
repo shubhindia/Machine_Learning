@@ -6,6 +6,7 @@ Created on Sat Dec 15 23:47:23 2018
 """
 import numpy as np
 import pandas as pd
+from scipy.stats import linregress
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.cross_validation import train_test_split
@@ -54,6 +55,15 @@ def main():
     predictions = lm.predict(X_test)
     plt.scatter(y_test,predictions)
     print("Blue Dots Are Predictions & Red Are Given Points")
+#method for regresision analysis
+    result = stats.linregress(x[:,0], y[:,0])
+    print("Regression Analysis")
+    print(result)
+
+    
+
+
+
 
 # plotting regression line
     plot_regression_line(x, y, b)
