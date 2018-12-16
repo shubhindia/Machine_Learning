@@ -6,6 +6,8 @@ Created on Sat Dec 15 23:47:23 2018
 """
 import numpy as np
 import pandas as pd
+import scipy as sp
+import scipy.optimize
 from scipy.stats import linregress
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
@@ -55,15 +57,10 @@ def main():
     predictions = lm.predict(X_test)
     plt.scatter(y_test,predictions)
     print("Blue Dots Are Predictions & Red Are Given Points")
-#method for regresision analysis
+#method for linear regresision analysis
     result = stats.linregress(x[:,0], y[:,0])
     print("Regression Analysis")
     print(result)
-
-    
-
-
-
 
 # plotting regression line
     plot_regression_line(x, y, b)
